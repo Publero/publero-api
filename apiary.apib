@@ -4,44 +4,157 @@ HOST: http://www.google.com
 # Publero API
 Notes API is a *short texts saving* service similar to its physical paper presence on your table.
 
-# Group Notes
-Notes related resources of the **Notes API**
+# Group Publisher Admin
+Publisher related links
 
-## Notes Collection [/notes]
-### List all Notes [GET]
-+ Response 200 (application/json)
+## Publisher Collection [/admin/publisher]
 
-        [{
-          "id": 1, "title": "Jogging in park"
-        }, {
-          "id": 2, "title": "Pick-up posters from post-office"
-        }]
-
-### Create a Note [POST]
-+ Request (application/json)
-
-        { "title": "Buy cheese and bread for breakfast." }
-
-+ Response 201 (application/json)
-
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
-
-## Note [/notes/{id}]
-A single Note object with all its details
-
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
-
-### Retrieve a Note [GET]
-+ Response 200 (application/json)
+### List of All Publishers [GET]
++ Request
 
     + Header
+    
+                Authorization: Bearer {api_key}
 
-            X-My-Header: The Value
++ Response 200 (application/json)
 
+        [
+            {
+                "name": "Publisher 1",
+                "description": "Publisher 1 description",
+                "contacts": [
+                    {
+                        "type": "email",
+                        "title": "Personal email",
+                        "description": "Email description",
+                        "body": "some_email@example.com"
+                    },
+                    {
+                        "type": "address",
+                        "title": "Home Address",
+                        "description": "Address description",
+                        "body": "Some Street 5554, 555 21 Some City"
+                    },
+                    ...
+                ]
+            },
+            {
+                "name": "Publisher 2",
+                "description": "Publisher 2 description",
+                "contacts": [
+                    {
+                        "type": "email",
+                        "title": "Personal email",
+                        "description": "Email description",
+                        "body": "some_email@example.com"
+                    },
+                    {
+                        "type": "address",
+                        "title": "Home Address",
+                        "description": "Address description",
+                        "body": "Some Street 5554, 555 21 Some City"
+                    },
+                    ...
+                ]
+            },
+            ...
+        ]
+
+### Create Publisher [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Bearer {api_key}
+        
     + Body
+        
+                {
+                    "name": "Publisher 1",
+                    "description": "Publisher 1 description",
+                    "contacts": [
+                        {
+                            "type": "email",
+                            "title": "Personal email",
+                            "description": "Email description",
+                            "body": "some_email@example.com"
+                        },
+                        {
+                            "type": "address",
+                            "title": "Home Address",
+                            "description": "Address description",
+                            "body": "Some Street 5554, 555 21 Some City"
+                        },
+                        ...
+                    ]
+                }
 
-            { "id": 2, "title": "Pick-up posters from post-office" }
++ Response 200 (application/json)
 
-### Remove a Note [DELETE]
+        {
+          "id": 1,
+          "uri": "/publisher/1"
+        }
+        
+## Publisher [/admin/publisher/{id}]        
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Publisher to perform action with. Has example value.
+
+### Read [GET]
++ Request
+
+    + Header
+    
+                Authorization: Bearer {api_key}
+        
++ Response 200 (application/json)
+
+        {
+            "name": "Publisher 1",
+            "description": "Publisher 1 description",
+            "contacts": [
+                {
+                    "type": "email",
+                    "title": "Personal email",
+                    "description": "Email description",
+                    "body": "some_email@example.com"
+                },
+                {
+                    "type": "address",
+                    "title": "Home Address",
+                    "description": "Address description",
+                    "body": "Some Street 5554, 555 21 Some City"
+                },
+                ...
+            ]
+
+        }
+        
+### Full Update [PUT]
++ Request
+
+    + Header
+    
+                Authorization: Bearer {api_key}
+                
++ Response 204
+
+
+### Partial Update [PATCH]
++ Request
+
+    + Header
+    
+                Authorization: Bearer {api_key}
+
++ Response 204
+
+        
+### Delete [DELETE]
++ Request
+
+    + Header
+    
+                Authorization: Bearer {api_key}
+
 + Response 204
