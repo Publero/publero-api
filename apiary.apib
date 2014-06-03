@@ -2,9 +2,40 @@ FORMAT: 1A
 HOST: http://www.google.com
 
 # Publero API
-Notes API is a *short texts saving* service similar to its physical paper presence on your table.
 
-# Group Publisher Admin
+#### Authorization
+To authenticate against the API, client must provide access token in 1 of 3 ways:
+
+- `Authorization` HTTP header in form `Authorization: Token {token}`
+
+- `access_token` query parameter
+
+- `access_token` POST parameter - only for `application/x-www-form-urlencoded` request
+
+Authorization HTTP header is the preferred option.
+
+If authorization fails, status code 403 (Forbidden) is returned automatically with the following response:
+
+```json
+{
+    "code":403,
+    "message":"Access Denied",
+     "errors":null
+}
+```
+
+#### Request fail
+
+If the call was unsuccessful it will return status code 400 (Bad request) and response containing fields (error response):
+
+ - `code` - status code
+ 
+ - `message` - error message (e.g. "Validation Failed")
+ 
+ - `errors` - list of errors
+
+
+# Group Admin - Publisher
 Publisher related links
 
 ## Publisher Collection [/admin/publisher]
@@ -14,7 +45,7 @@ Publisher related links
 
     + Header
     
-                Authorization: Bearer {api_key}
+                Authorization: Token {token}
 
 + Response 200 (application/json)
 
@@ -65,7 +96,7 @@ Publisher related links
 
     + Header
     
-                Authorization: Bearer {api_key}
+                Authorization: Token {token}
         
     + Body
         
@@ -89,7 +120,7 @@ Publisher related links
                     ]
                 }
 
-+ Response 200 (application/json)
++ Response 201 (application/json)
 
         {
           "id": 1,
@@ -105,7 +136,7 @@ Publisher related links
 
     + Header
     
-                Authorization: Bearer {api_key}
+                Authorization: Token {token}
         
 + Response 200 (application/json)
 
@@ -135,7 +166,7 @@ Publisher related links
 
     + Header
     
-                Authorization: Bearer {api_key}
+                Authorization: Token {token}
                 
 + Response 204
 
@@ -145,7 +176,7 @@ Publisher related links
 
     + Header
     
-                Authorization: Bearer {api_key}
+                Authorization: Token {token}
 
 + Response 204
 
@@ -155,6 +186,6 @@ Publisher related links
 
     + Header
     
-                Authorization: Bearer {api_key}
+                Authorization: Token {token}
 
 + Response 204
