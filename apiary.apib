@@ -65,8 +65,7 @@ Publisher related links
                         "title": "Home Address",
                         "description": "Address description",
                         "body": "Some Street 5554, 555 21 Some City"
-                    },
-                    ...
+                    }
                 ]
             },
             {
@@ -84,11 +83,9 @@ Publisher related links
                         "title": "Home Address",
                         "description": "Address description",
                         "body": "Some Street 5554, 555 21 Some City"
-                    },
-                    ...
+                    }
                 ]
-            },
-            ...
+            }
         ]
 
 ### Create Publisher [POST]
@@ -115,8 +112,7 @@ Publisher related links
                             "title": "Home Address",
                             "description": "Address description",
                             "body": "Some Street 5554, 555 21 Some City"
-                        },
-                        ...
+                        }
                     ]
                 }
 
@@ -155,8 +151,7 @@ Publisher related links
                     "title": "Home Address",
                     "description": "Address description",
                     "body": "Some Street 5554, 555 21 Some City"
-                },
-                ...
+                }
             ]
 
         }
@@ -185,8 +180,7 @@ Publisher related links
                             "title": "Home Address",
                             "description": "Address description",
                             "body": "Some Street 5554, 555 21 Some City"
-                        },
-                        ...
+                        }
                     ]
                 }    
                 
@@ -217,8 +211,7 @@ Publisher related links
                             "title": "Home Address",
                             "description": "Address description",
                             "body": "Some Street 5554, 555 21 Some City"
-                        },
-                        ...
+                        }
                     ]
                 }    
 
@@ -251,7 +244,6 @@ Seller related links
         [
             {
                 "name": "seller 1",
-                "description": "seller 1 description",
                 "contacts": [
                     {
                         "type": "email",
@@ -264,13 +256,13 @@ Seller related links
                         "title": "Home Address",
                         "description": "Address description",
                         "body": "Some Street 5554, 555 21 Some City"
-                    },
-                    ...
-                ]
+                    }
+                ],
+                "identification": "11111111",
+                "vatNumber": "CZ11111111"
             },
             {
                 "name": "seller 2",
-                "description": "seller 2 description",
                 "contacts": [
                     {
                         "type": "email",
@@ -283,11 +275,11 @@ Seller related links
                         "title": "Home Address",
                         "description": "Address description",
                         "body": "Some Street 5554, 555 21 Some City"
-                    },
-                    ...
-                ]
-            },
-            ...
+                    }
+                ],
+                "identification": "22222222
+                "vatNumber": "CZ22222222"
+            }
         ]
 
 ### Create Seller [POST]
@@ -301,7 +293,6 @@ Seller related links
         
                 {
                     "name": "Seller 1",
-                    "description": "Seller 1 description",
                     "contacts": [
                         {
                             "type": "email",
@@ -314,9 +305,10 @@ Seller related links
                             "title": "Home Address",
                             "description": "Address description",
                             "body": "Some Street 5554, 555 21 Some City"
-                        },
-                        ...
-                    ]
+                        }
+                    ],
+                    "identification": "11111111",
+                    "vatNumber": "CZ11111111"
                 }
 
 + Response 201 (application/json)
@@ -341,7 +333,6 @@ Seller related links
 
         {
             "name": "Seller 1",
-            "description": "Seller 1 description",
             "contacts": [
                 {
                     "type": "email",
@@ -354,10 +345,10 @@ Seller related links
                     "title": "Home Address",
                     "description": "Address description",
                     "body": "Some Street 5554, 555 21 Some City"
-                },
-                ...
-            ]
-
+                }
+            ],
+            "identification": "11111111",
+            "vatNumber": "CZ11111111"
         }
         
 ### Full Update [PUT]
@@ -371,7 +362,6 @@ Seller related links
 
                 {
                     "name": "Seller 1",
-                    "description": "Seller 1 description",
                     "contacts": [
                         {
                             "type": "email",
@@ -384,9 +374,10 @@ Seller related links
                             "title": "Home Address",
                             "description": "Address description",
                             "body": "Some Street 5554, 555 21 Some City"
-                        },
-                        ...
-                    ]
+                        }
+                    ],
+                    "identification": "11111111",
+                    "vatNumber": "CZ11111111"
                 }
 
 + Response 204
@@ -403,7 +394,6 @@ Seller related links
     
                 {
                     "name": "Seller 1",
-                    "description": "Seller 1 description",
                     "contacts": [
                         {
                             "type": "email",
@@ -416,9 +406,10 @@ Seller related links
                             "title": "Home Address",
                             "description": "Address description",
                             "body": "Some Street 5554, 555 21 Some City"
-                        },
-                        ...
-                    ]
+                        }
+                    ],
+                    "identification": "11111111",
+                    "vatNumber": "CZ11111111"
                 }
 
 + Response 204
