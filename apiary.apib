@@ -162,21 +162,264 @@ Publisher related links
         }
         
 ### Full Update [PUT]
-+ Request
++ Request (application/json)
 
     + Header
     
                 Authorization: Token {token}
                 
+    + Body
+    
+                {
+                    "name": "Publisher 1",
+                    "description": "Publisher 1 description",
+                    "contacts": [
+                        {
+                            "type": "email",
+                            "title": "Personal email",
+                            "description": "Email description",
+                            "body": "some_email@example.com"
+                        },
+                        {
+                            "type": "address",
+                            "title": "Home Address",
+                            "description": "Address description",
+                            "body": "Some Street 5554, 555 21 Some City"
+                        },
+                        ...
+                    ]
+                }    
+                
 + Response 204
 
 
 ### Partial Update [PATCH]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+            
+    + Body
+    
+                {
+                    "name": "Publisher 1",
+                    "description": "Publisher 1 description",
+                    "contacts": [
+                        {
+                            "type": "email",
+                            "title": "Personal email",
+                            "description": "Email description",
+                            "body": "some_email@example.com"
+                        },
+                        {
+                            "type": "address",
+                            "title": "Home Address",
+                            "description": "Address description",
+                            "body": "Some Street 5554, 555 21 Some City"
+                        },
+                        ...
+                    ]
+                }    
+
++ Response 204
+
+        
+### Delete [DELETE]
 + Request
 
     + Header
     
                 Authorization: Token {token}
+
++ Response 204
+
+# Group Admin - Seller
+Seller related links
+
+## Seller Collection [/admin/seller]
+
+### List of All Sellers [GET]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 200 (application/json)
+
+        [
+            {
+                "name": "seller 1",
+                "description": "seller 1 description",
+                "contacts": [
+                    {
+                        "type": "email",
+                        "title": "Personal email",
+                        "description": "Email description",
+                        "body": "some_email@example.com"
+                    },
+                    {
+                        "type": "address",
+                        "title": "Home Address",
+                        "description": "Address description",
+                        "body": "Some Street 5554, 555 21 Some City"
+                    },
+                    ...
+                ]
+            },
+            {
+                "name": "seller 2",
+                "description": "seller 2 description",
+                "contacts": [
+                    {
+                        "type": "email",
+                        "title": "Personal email",
+                        "description": "Email description",
+                        "body": "some_email@example.com"
+                    },
+                    {
+                        "type": "address",
+                        "title": "Home Address",
+                        "description": "Address description",
+                        "body": "Some Street 5554, 555 21 Some City"
+                    },
+                    ...
+                ]
+            },
+            ...
+        ]
+
+### Create Seller [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+        
+                {
+                    "name": "Seller 1",
+                    "description": "Seller 1 description",
+                    "contacts": [
+                        {
+                            "type": "email",
+                            "title": "Personal email",
+                            "description": "Email description",
+                            "body": "some_email@example.com"
+                        },
+                        {
+                            "type": "address",
+                            "title": "Home Address",
+                            "description": "Address description",
+                            "body": "Some Street 5554, 555 21 Some City"
+                        },
+                        ...
+                    ]
+                }
+
++ Response 201 (application/json)
+
+        {
+          "id": 1,
+          "uri": "/seller/1"
+        }
+        
+## Seller [/admin/seller/{id}]        
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the seller to perform action with. Has example value.
+
+### Read [GET]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+        
++ Response 200 (application/json)
+
+        {
+            "name": "Seller 1",
+            "description": "Seller 1 description",
+            "contacts": [
+                {
+                    "type": "email",
+                    "title": "Personal email",
+                    "description": "Email description",
+                    "body": "some_email@example.com"
+                },
+                {
+                    "type": "address",
+                    "title": "Home Address",
+                    "description": "Address description",
+                    "body": "Some Street 5554, 555 21 Some City"
+                },
+                ...
+            ]
+
+        }
+        
+### Full Update [PUT]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+                
+    + Body
+
+                {
+                    "name": "Seller 1",
+                    "description": "Seller 1 description",
+                    "contacts": [
+                        {
+                            "type": "email",
+                            "title": "Personal email",
+                            "description": "Email description",
+                            "body": "some_email@example.com"
+                        },
+                        {
+                            "type": "address",
+                            "title": "Home Address",
+                            "description": "Address description",
+                            "body": "Some Street 5554, 555 21 Some City"
+                        },
+                        ...
+                    ]
+                }
+
++ Response 204
+
+
+### Partial Update [PATCH]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+                
+    + Body
+    
+                {
+                    "name": "Seller 1",
+                    "description": "Seller 1 description",
+                    "contacts": [
+                        {
+                            "type": "email",
+                            "title": "Personal email",
+                            "description": "Email description",
+                            "body": "some_email@example.com"
+                        },
+                        {
+                            "type": "address",
+                            "title": "Home Address",
+                            "description": "Address description",
+                            "body": "Some Street 5554, 555 21 Some City"
+                        },
+                        ...
+                    ]
+                }
 
 + Response 204
 
