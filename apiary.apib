@@ -423,3 +423,93 @@ Seller related links
                 Authorization: Token {token}
 
 + Response 204
+
+# Group Admin - Document
+Document links
+
+## Document API [/admin/document/{id}]
+
+### Retrieve document [GET]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 200 (application/octet-stream)
+
+    + Body
+
+                {binary_data}
+                
+# Group User - Library
+Document links
+
+## Document API [/user/library]
+
+### Retrieve user library [GET]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 200 (application/json)
+
+    + Body
+
+                [
+                    {
+                        "id": "1",
+                        "name": "Product 1",
+                        "slug": "product_1",
+                        "imageUrl": "/product/image/1",
+                        "prices": [],
+                        "packages": [],
+                        "productType": "article",
+                        "perex": "Article 1 Perex",
+                        "author": { "id": "1", "uri": "/user/1" }
+                    },
+                    {
+                        "id": "2",
+                        "name": "Product 2",
+                        "slug": "product_2",
+                        "imageUrl": "",
+                        "prices": "",
+                        "packages": "",
+                        "productType": "attachment",
+                        "free": "",
+                        "issue": "",
+                        "groupItem": ""
+                    },
+                    {
+                        "id": "3",
+                        "name": "Product 3",
+                        "slug": "product_3",
+                        "imageUrl": "",
+                        "prices": "",
+                        "packages": "",
+                        "productType": "issue",
+                        "publishedAt": "",
+                        "autopublish": "",
+                        "free": "",
+                        "printable": "",
+                        "downloadable": "",
+                        "identification": "",
+                        "attachments": "",
+                        "publisher": "",
+                        "title": "",
+                        "slug": ""
+                    },
+                    {
+                        "id": "4",
+                        "name": "Product 4",
+                        "slug": "product_4",
+                        "imageUrl": "",
+                        "prices": "",
+                        "packages": "",
+                        "productType": "UserDocument",
+                        "owner": "",
+                        "private": ""           
+                    }
+                ]
