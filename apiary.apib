@@ -517,3 +517,333 @@ Document links
                         "private": ""           
                     }
                 ]
+
+# Group Admin - Title
+
+## Title [/admin/title]
+
+### Create Title [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+    
+                {
+                    "type":"title",
+                    "name":"test_title",
+                    "publisherName":"test_publisher",
+                    "description":"test_description",
+                    "identification":"978-80-7215-472-2",
+                    "issueDefaultDownloadable":true,
+                    "free":true,
+                    "language":"cs",
+                    "categories":[{"category":"test_category_1","default":true}],
+                    "tags":["test_book"],
+                    "defaultPrice":100,
+                    "issueDefaultPrice":120,
+                    "issueDefaultAppstoreTier":10,
+                    "publisher":1
+                }
++ Response 201 (application/json)
+
+            {
+                "id": 1,
+                "uri": "/title/1"
+            }
+
+## Title [/admin/title/{id}]  
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
+
+### Read [GET]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 200 (application/json)
+    
+        {
+            "id":1,
+            "name":"read",
+            "defaultPrice":15,
+            "free":false,
+            "publisherName":"Test publisher",
+            "categories":[
+                {
+                    "category":{
+                        "name":"Test category 1"
+                    }
+                }
+            ],
+            "groups":{
+                "id":1,
+                "uri":"group/1"
+            },
+            "issues"::{
+                "id":1,
+                "uri":"issue/1"
+            },
+            "publisher":{
+                "id":1,
+                "uri":"publisher/1"
+            },
+            "issueDefaultPrice":120,
+            "issueDefaultAppstoreTier":10,
+            "issueDefaultPrintable":true,
+            "issueDefaultDownloadable":true,
+            "language":"cs",
+            "description":"Test Description",
+            "identification":"TEST 1234567890",
+            "tags":[
+                "test tag"
+            ]
+        }
+
+### Full Update [PUT]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+                
+    + Body
+    
+                {
+                    "type":"title",
+                    "name":"test_title",
+                    "publisherName":"test_publisher",
+                    "description":"test_description",
+                    "identification":"978-80-7215-472-2",
+                    "issueDefaultDownloadable":true,
+                    "free":true,
+                    "language":"cs",
+                    "categories":[
+                        {
+                            "category":"test_category_1",
+                            "default":true
+                        }
+                    ],
+                    "tags":["test_book"],
+                    "defaultPrice":100,
+                    "issueDefaultPrice":120,
+                    "issueDefaultAppstoreTier":10,
+                    "publisher":1
+                }
++ Response 204
+
+### Full Update [PATCH]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+                
+    + Body
+    
+                {
+                    "type":"title",
+                    "name":"test_title",
+                    "publisherName":"test_publisher",
+                    "description":"test_description",
+                    "identification":"978-80-7215-472-2",
+                    "issueDefaultDownloadable":true,
+                    "free":true,
+                    "language":"cs",
+                    "categories":[{"category":"test_category_1","default":true}],
+                    "tags":["test_book"],
+                    "defaultPrice":100,
+                    "issueDefaultPrice":120,
+                    "issueDefaultAppstoreTier":10,
+                    "publisher":1
+                }
++ Response 204
+
+### Delete [DELETE]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 204
+
+
+
+# Group Admin - Issue
+Issue related links
+
+## Issue [/admin/issue]
+### Create Issue [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+    
+            {
+                "name":"test_issue",
+                "publishedAt":"2014-01-01 00:00:00",
+                "autopublish":true,
+                "free":true,
+                "printable":true,
+                "downloadable":true,
+                "identification":"978-80-7462-066-9",
+                "imageUrl":"picture.jpg",
+                "type":"issue",
+                "prices":[
+                    {
+                        "priceType":"normal",
+                        "price":80,
+                        "tier":10,
+                        "validSince":"2014-01-01 00:00:00",
+                        "currency":"CZK"
+                    }
+                ],
+                "publisher":1,
+                "title":1,
+                "document":2
+            }
++ Response 201 (application/json)
+
+            {
+                "id": 1,
+                "uri": "/issue/1"
+            }
+
+## Issue [/admin/issue/{id}]
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Issue to perform action with. Has example value.
+
+
+### Read [GET]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 200 (application/json)
+    
+        {
+            "id":7,
+            "name":"test_issue",
+            "slug":"test-issue-2",
+            "imageUrl":"picture.jpg",
+            "prices":[
+                {
+                    "id":5,
+                    "validSince":"2014-01-01 00:00:00",
+                    "priceType":"normal",
+                    "price":80,
+                    "tier":10,
+                    "currency":"CZK"
+                }
+            ],
+            "document":{
+                "id":2,
+                "uri":"http:\/\/api.publero.veleba\/content\/document\/2"
+            },
+            "publishedAt":"2014-01-01 00:00:00",
+            "autopublish":true,
+            "free":true,
+            "printable":true,
+            "downloadable":true,
+            "identification":"978-80-7462-066-9",
+            "attachments":[],
+            "publisher":{
+                "id":1,
+                "uri":"publisher/1"
+            },
+            "title":{
+            "id":1,
+            "uri":"publisher\/content\/title\/1"
+        }
+
+
+
+### Full Update [PUT]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+                
+    + Body
+    
+            {
+                "name":"test_issue",
+                "publishedAt":"2014-01-01 00:00:00",
+                "autopublish":true,
+                "free":true,
+                "printable":true,
+                "downloadable":true,
+                "identification":"978-80-7462-066-9",
+                "imageUrl":"picture.jpg",
+                "type":"issue",
+                "prices":[
+                    {
+                        "priceType":"normal",
+                        "price":80,
+                        "tier":10,
+                        "validSince":"2014-01-01 00:00:00",
+                        "currency":"CZK"
+                    }
+                ],
+                "publisher":1,
+                "title":1,
+                "document":2
+            }
++ Response 204
+
+### Full Update [PATCH]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+                
+    + Body
+    
+            {
+                "name":"test_issue",
+                "publishedAt":"2014-01-01 00:00:00",
+                "autopublish":true,
+                "free":true,
+                "printable":true,
+                "downloadable":true,
+                "identification":"978-80-7462-066-9",
+                "imageUrl":"picture.jpg",
+                "type":"issue",
+                "prices":[
+                    {
+                        "priceType":"normal",
+                        "price":80,
+                        "tier":10,
+                        "validSince":"2014-01-01 00:00:00",
+                        "currency":"CZK"
+                    }
+                ],
+                "publisher":1,
+                "title":1,
+                "document":2
+            }
+
++ Response 204
+
+### Delete [DELETE]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 204
+
