@@ -950,3 +950,92 @@ Issue related links
                 Authorization: Token {token}
 
 + Response 204
+
+## Issue [/content/issue/{id}]
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Issue to perform action with. Has example value.
+
+
+### Read [GET]
+
++ Response 200 (application/json)
+    
+        {
+            "id":7,
+            "name":"test_issue",
+            "slug":"test-issue-2",
+            "imageUrl":"picture.jpg",
+            "prices":[
+                {
+                    "id":5,
+                    "validSince":"2014-01-01 00:00:00",
+                    "priceType":"normal",
+                    "price":80,
+                    "tier":10,
+                    "currency":"CZK"
+                }
+            ],
+            "document":{
+                "id":2,
+                "uri":"document/2"
+            },
+            "publishedAt":"2014-01-01 00:00:00",
+            "autopublish":true,
+            "free":true,
+            "printable":true,
+            "downloadable":true,
+            "identification":"978-80-7462-066-9",
+            "attachments":[],
+            "publisher":{
+                "id":1,
+                "uri":"publisher/1"
+            },
+            "title":{
+                "id":1,
+                "uri":"title/1"
+        }
+
+## Title [/content/title/{id}]  
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
+
+### Read [GET]
++ Response 200 (application/json)
+    
+        {
+            "id":1,
+            "name":"read",
+            "defaultPrice":15,
+            "free":false,
+            "publisherName":"Test publisher",
+            "categories":[
+                {
+                    "category":{
+                        "name":"Test category 1"
+                    }
+                }
+            ],
+            "groups":{
+                "id":1,
+                "uri":"group/1"
+            },
+            "issues"::{
+                "id":1,
+                "uri":"issue/1"
+            },
+            "publisher":{
+                "id":1,
+                "uri":"publisher/1"
+            },
+            "issueDefaultPrice":120,
+            "issueDefaultAppstoreTier":10,
+            "issueDefaultPrintable":true,
+            "issueDefaultDownloadable":true,
+            "language":"cs",
+            "description":"Test Description",
+            "identification":"TEST 1234567890",
+            "tags":[
+                "test tag"
+            ]
+        }
