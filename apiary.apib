@@ -1080,10 +1080,12 @@ Issue related links
         {
             "id":7,
             "name":"test_name",
-            "groupsItems":{
-                "id":1,
-                "uri":"content/group/1"
-            },
+            "groupsItems":[
+                {
+                    "id":1,
+                    "uri":"content/group/1"
+                }
+            ]
             
         }
 
@@ -1140,7 +1142,7 @@ Issue related links
     
             {
                 "name":"test_create_group",
-                "title":"1",
+                "group":"1",
            
             }
 + Response 201 (application/json)
@@ -1161,7 +1163,14 @@ Issue related links
         {
             "id":7,
             "name":"test_name",
-            "group":"1"
+            "group":"1",
+            "attachments":[
+                {
+                    "id":"1",
+                    "uri": "content/attachment/1"
+                }
+            
+            ],
             
         }
 
@@ -1221,8 +1230,7 @@ Issue related links
             {
                 "name":"test_create_group",
                 "parent":"1",
-                "title":"1",
-           
+                "title":"1",        
             }
 + Response 201 (application/json)
 
@@ -1244,12 +1252,12 @@ Issue related links
             "name":"test_name",
             "code":"test_code",
             "parent":"1",
-            "titleToCategories":{
-                "category":{
+            "titleToCategories":[
+                {
                     "id":1,
                     "uri":"content/category/1"
                 },
-            },
+            ],
             "children": []
             
         }
