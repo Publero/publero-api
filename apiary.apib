@@ -951,6 +951,8 @@ Issue related links
 
 + Response 204
 
+# Group Content - Issue
+
 ## Issue [/content/issue/{id}]
 
 + Parameters
@@ -996,6 +998,9 @@ Issue related links
                 "uri":"title/1"
         }
 
+
+# Group Content - Title
+
 ## Title [/content/title/{id}]  
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
@@ -1039,3 +1044,245 @@ Issue related links
                 "test tag"
             ]
         }
+
+# Group Admin - Group
+
+## Group [/admin/content/group]
+### Create Group [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+    
+            {
+                "name":"test_create_group",
+                "title":"1",
+           
+            }
++ Response 201 (application/json)
+
+            {
+                "id": 1,
+                "uri": "content/group/1"
+            }
+
+## Group [/admin/content/group/{id}]  
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
+
+### Read [GET]
+
++ Response 200 (application/json)
+    
+        {
+            "id":7,
+            "name":"test_name",
+            "groupsItems":{
+                "id":1,
+                "uri":"content/group/1"
+            },
+            
+        }
+
+### Full Update [PUT]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "name":"test_name",
+            }
+
++ Response 204
+
+### Full Update [PATCH]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "name":"test_name",
+            }
+
++ Response 204
+
+### Delete [DELETE]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 204
+
+# Group Admin - GroupItem
+
+## GroupItem [/admin/content/group_item]
+### Create GroupItem [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+    
+            {
+                "name":"test_create_group",
+                "title":"1",
+           
+            }
++ Response 201 (application/json)
+
+            {
+                "id": 1,
+                "uri": "content/group/1"
+            }
+
+## GroupItem [/admin/content/group_item/{id}]  
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
+
+### Read [GET]
+
++ Response 200 (application/json)
+    
+        {
+            "id":7,
+            "name":"test_name",
+            "group":"1"
+            
+        }
+
+### Full Update [PUT]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "name":"test_name",
+                "group":"1"
+            }
+
++ Response 204
+
+### Full Update [PATCH]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "name":"test_name",
+                "group":"1"
+            }
+
++ Response 204
+
+### Delete [DELETE]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 204
+
+# Group Admin - Category
+
+## Category [/admin/content/category]
+### Create GroupItem [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+    
+            {
+                "name":"test_create_group",
+                "title":"1",
+           
+            }
++ Response 201 (application/json)
+
+            {
+                "id": 1,
+                "uri": "content/group/1"
+            }
+
+## Category [/admin/content/category/{id}]  
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
+
+### Read [GET]
+
++ Response 200 (application/json)
+    
+        {
+            "id":7,
+            "name":"test_name",
+            "code":"test_code"
+            
+        }
+
+### Full Update [PUT]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "name":"test_name",
+                "code":"test_code"
+            }
+
++ Response 204
+
+### Full Update [PATCH]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "name":"test_name",
+                "code":"test_code"
+            }
+
++ Response 204
+
+### Delete [DELETE]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 204
+
