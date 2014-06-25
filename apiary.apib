@@ -1220,6 +1220,7 @@ Issue related links
     
             {
                 "name":"test_create_group",
+                "parent":"1",
                 "title":"1",
            
             }
@@ -1241,7 +1242,15 @@ Issue related links
         {
             "id":7,
             "name":"test_name",
-            "code":"test_code"
+            "code":"test_code",
+            "parent":"1",
+            "titleToCategories":{
+                "category":{
+                    "id":1,
+                    "uri":"content/category/1"
+                },
+            },
+            "children": []
             
         }
 
@@ -1256,7 +1265,8 @@ Issue related links
     
             {
                 "name":"test_name",
-                "code":"test_code"
+                "code":"test_code",
+                "parent":"1",
             }
 
 + Response 204
@@ -1272,7 +1282,8 @@ Issue related links
     
             {
                 "name":"test_name",
-                "code":"test_code"
+                "code":"test_code",
+                "parent":"1",
             }
 
 + Response 204
