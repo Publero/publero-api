@@ -520,7 +520,7 @@ Document links
 
 # Group Admin - Title
 
-## Title [/admin/title]
+## Title [/admin/content/title]
 
 ### Create Title [POST]
 + Request (application/json)
@@ -535,8 +535,11 @@ Document links
                     "type":"title",
                     "name":"test_title",
                     "publisherName":"test_publisher",
-                    "description":"test_description",
-                    "identification":"978-80-7215-472-2",
+                    "description":"",
+                    "identification":"",
+                    "issueDefaultPrice":120,
+                    "issueDefaultAppstoreTier":10,
+                    "issueDefaultPrintable":true,
                     "issueDefaultDownloadable":true,
                     "free":true,
                     "language":"cs",
@@ -547,19 +550,16 @@ Document links
                         }
                     ],
                     "tags":["test_book"],
-                    "defaultPrice":100,
-                    "issueDefaultPrice":120,
-                    "issueDefaultAppstoreTier":10,
                     "publisher":1
                 }
 + Response 201 (application/json)
 
             {
                 "id": 1,
-                "uri": "title/1"
+                "uri": "content/title/1"
             }
 
-## Title [/admin/title/{id}]  
+## Title [/admin/content/title/{id}]  
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
 
@@ -588,26 +588,26 @@ Document links
             "groups": [
                 {
                     "id":1,
-                    "uri":"group/1"
+                    "uri":"content/group/1"
                 }
             ],
             "issues": [
                 {
                     "id":1,
-                    "uri":"issue/1"
+                    "uri":"content/issue/1"
                 }
             ],
             "publisher": [
                 "id":1,
-                "uri":"publisher/1"
+                "uri":"content/publisher/1"
             ],
             "issueDefaultPrice":120,
             "issueDefaultAppstoreTier":10,
             "issueDefaultPrintable":true,
             "issueDefaultDownloadable":true,
             "language":"cs",
-            "description":"Test Description",
-            "identification":"TEST 1234567890",
+            "description":"",
+            "identification":"",
             "tags": [
                 "test tag"
             ]
@@ -622,12 +622,15 @@ Document links
                 
     + Body
     
-                {
+               {
                     "type":"title",
                     "name":"test_title",
                     "publisherName":"test_publisher",
-                    "description":"test_description",
-                    "identification":"978-80-7215-472-2",
+                    "description":"",
+                    "identification":"",
+                    "issueDefaultPrice":120,
+                    "issueDefaultAppstoreTier":10,
+                    "issueDefaultPrintable":true,
                     "issueDefaultDownloadable":true,
                     "free":true,
                     "language":"cs",
@@ -638,9 +641,6 @@ Document links
                         }
                     ],
                     "tags":["test_book"],
-                    "defaultPrice":100,
-                    "issueDefaultPrice":120,
-                    "issueDefaultAppstoreTier":10,
                     "publisher":1
                 }
 + Response 204
@@ -654,12 +654,15 @@ Document links
                 
     + Body
     
-                {
+               {
                     "type":"title",
                     "name":"test_title",
                     "publisherName":"test_publisher",
-                    "description":"test_description",
-                    "identification":"978-80-7215-472-2",
+                    "description":"",
+                    "identification":"",
+                    "issueDefaultPrice":120,
+                    "issueDefaultAppstoreTier":10,
+                    "issueDefaultPrintable":true,
                     "issueDefaultDownloadable":true,
                     "free":true,
                     "language":"cs",
@@ -670,9 +673,6 @@ Document links
                         }
                     ],
                     "tags":["test_book"],
-                    "defaultPrice":100,
-                    "issueDefaultPrice":120,
-                    "issueDefaultAppstoreTier":10,
                     "publisher":1
                 }
 + Response 204
@@ -691,7 +691,7 @@ Document links
 # Group Admin - Issue
 Issue related links
 
-## Issue [/admin/issue]
+## Issue [/admin/content/issue]
 ### Create Issue [POST]
 + Request (application/json)
 
@@ -708,8 +708,7 @@ Issue related links
                 "free":true,
                 "printable":true,
                 "downloadable":true,
-                "identification":"978-80-7462-066-9",
-                "imageUrl":"picture.jpg",
+                "identification":"",
                 "type":"issue",
                 "prices": [
                     {
@@ -728,10 +727,10 @@ Issue related links
 
             {
                 "id": 1,
-                "uri": "issue/1"
+                "uri": "content/issue/1"
             }
 
-## Issue [/admin/issue/{id}]
+## Issue [/admin/content/issue/{id}]
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Issue to perform action with. Has example value.
@@ -763,7 +762,7 @@ Issue related links
             ],
             "document": [
                 "id":2,
-                "uri":"document/2"
+                "uri":"content/document/2"
             ],
             "publishedAt":"2014-01-01 00:00:00",
             "autopublish":true,
@@ -774,11 +773,11 @@ Issue related links
             "attachments":[],
             "publisher": [
                 "id":1,
-                "uri":"publisher/1"
+                "uri":"content/publisher/1"
             ],
             "title":[
                 "id":1,
-                "uri":"title/1"
+                "uri":"content/title/1"
             ]
         }
 
@@ -800,8 +799,7 @@ Issue related links
                 "free":true,
                 "printable":true,
                 "downloadable":true,
-                "identification":"978-80-7462-066-9",
-                "imageUrl":"picture.jpg",
+                "identification":"",
                 "type":"issue",
                 "prices": [
                     {
@@ -834,8 +832,7 @@ Issue related links
                 "free":true,
                 "printable":true,
                 "downloadable":true,
-                "identification":"978-80-7462-066-9",
-                "imageUrl":"picture.jpg",
+                "identification":"",
                 "type":"issue",
                 "prices": [
                     {
@@ -877,7 +874,7 @@ Issue related links
 
             {
                 "id": 1,
-                "uri": "document/1"
+                "uri": "content/document/1"
             }
     
 # Group Content - Web page
@@ -893,7 +890,7 @@ Issue related links
 
             {
                 "id": 1,
-                "uri": "issue/1"
+                "uri": "admin/web_page/1"
             }
 
 ## Web page [/admin/content/web_page/{id}] 
@@ -985,22 +982,22 @@ Issue related links
             ],
             "document": [
                 "id":2,
-                "uri":"document/2"
+                "uri":"content/document/2"
             ],
             "publishedAt":"2014-01-01 00:00:00",
             "autopublish":true,
             "free":true,
             "printable":true,
             "downloadable":true,
-            "identification":"978-80-7462-066-9",
+            "identification":"",
             "attachments":[],
             "publisher": [
                 "id":1,
-                "uri":"publisher/1"
+                "uri":"content/publisher/1"
             ],
             "title": [
                 "id":1,
-                "uri":"title/1"
+                "uri":"content/title/1"
             ]
         }
 
@@ -1030,26 +1027,26 @@ Issue related links
             "groups": [
                 {
                     "id":1,
-                    "uri":"group/1"
+                    "uri":"content/group/1"
                 }
             ],
             "issues": [
                 {
                     "id":1,
-                    "uri":"issue/1"
+                    "uri":"content/issue/1"
                 }
             ],
             "publisher": [
                 "id":1,
-                "uri":"publisher/1"
+                "uri":"content/publisher/1"
             ],
             "issueDefaultPrice":120,
             "issueDefaultAppstoreTier":10,
             "issueDefaultPrintable":true,
             "issueDefaultDownloadable":true,
             "language":"cs",
-            "description":"Test Description",
-            "identification":"TEST 1234567890",
+            "description":"",
+            "identification":"",
             "tags": [
                 "test tag"
             ]
@@ -1093,7 +1090,7 @@ Issue related links
             "groupsItems": [
                 {
                     "id":1,
-                    "uri":"content/group/1"
+                    "uri":"content/group_item/1"
                 }
             ]
             
@@ -1151,7 +1148,7 @@ Issue related links
     + Body
     
             {
-                "name":"test_create_group",
+                "name":"test_create_group_item",
                 "group":"1",
            
             }
@@ -1159,7 +1156,7 @@ Issue related links
 
             {
                 "id": 1,
-                "uri": "content/group/1"
+                "uri": "content/group_item/1"
             }
 
 ## GroupItem [/admin/content/group_item/{id}]  
@@ -1236,7 +1233,7 @@ Issue related links
     + Body
     
             {
-                "name":"test_create_group",
+                "name":"test_create_category",
                 "parent":"1",
                 "title":"1",        
             }
@@ -1244,7 +1241,7 @@ Issue related links
 
             {
                 "id": 1,
-                "uri": "content/group/1"
+                "uri": "content/category/1"
             }
 
 ## Category [/admin/content/category/{id}]  
