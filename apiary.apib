@@ -862,23 +862,82 @@ Issue related links
 
 + Response 204
 
-# Group Content - Document
+# Group Admin  -  Document
 
-## Document [/content/document]
+## Document [/admin/content/document]
 ### Create Document [POST]
++ Request (application/json)
 
-+ Request 
-        
     + Header
     
-                Content-Type: multipart/form-data
-
+                Authorization: Token {token}
+        
+    + Body
+    
+            {
+                "type":"pdf",
+                "name":"test_document_create",
+           
+            }
 + Response 201 (application/json)
 
             {
                 "id": 1,
                 "uri": "content/document/1"
             }
+
+### Read [GET]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
++ Response 200 (application/json)
+    + Body
+    
+            {
+                "name":"test_name",
+            }
+
+### Full Update [PUT]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "type":"pdf",
+                "name":"test_document_create",
+            }
+
++ Response 204
+
+### Full Update [PATCH]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "type":"pdf",
+                "name":"test_document_create",
+            }
+
++ Response 204
+
+### Delete [DELETE]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
++ Response 204
     
 # Group Content - Web page
 
@@ -1313,3 +1372,135 @@ Issue related links
 
 + Response 204
 
+# Group Admin - Attachment
+
+## Attachment [/admin/content/attachment]
+### Create Group [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+    
+            {
+                "free":true,
+                "name":"test_attachment",
+                "prices": [
+                    {
+                        "priceType":"normal",
+                        "price":"10",
+                        "tier":"10",
+                        "validSince":"2014-01-01 10:00:00",
+                        "currency":"CZK"          
+                    }
+                ]
+                "issue":"1",
+                "groupItem":"1",
+                "document":"1"  
+            }
++ Response 201 (application/json)
+
+            {
+                "id": 1,
+                "uri": "content/attachment/1"
+            }
+
+## Category [/admin/content/attachment/{id}]  
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
+
+### Read [GET]
++ Response 200 (application/json)
+    
+            {
+                "free":true,
+                "name":"test_attachment",
+                "prices": [
+                    {
+                        "priceType":"normal",
+                        "price":"10",
+                        "tier":"10",
+                        "validSince":"2014-01-01 10:00:00",
+                        "currency":"CZK"          
+                    }
+                ]
+                "issue":[
+                    "id":1,
+                    "uri":"content/publisher/1"
+                ],
+                "groupItem":[
+                    "id":1,
+                    "uri":"content/attachment/1"
+                ],
+                "document":[
+                    "id":1,
+                    "uri":"content/attachment/1"
+                ], 
+            }
+
+### Full Update [PUT]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "free":true,
+                "name":"test_attachment",
+                "prices": [
+                    {
+                        "priceType":"normal",
+                        "price":"10",
+                        "tier":"10",
+                        "validSince":"2014-01-01 10:00:00",
+                        "currency":"CZK"          
+                    }
+                ]
+                "issue":"1",
+                "groupItem":"1",
+                "document":"1"  
+            }
+
++ Response 204
+
+### Full Update [PATCH]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "free":true,
+                "name":"test_attachment",
+                "prices": [
+                    {
+                        "priceType":"normal",
+                        "price":"10",
+                        "tier":"10",
+                        "validSince":"2014-01-01 10:00:00",
+                        "currency":"CZK"          
+                    }
+                ]
+                "issue":"1",
+                "groupItem":"1",
+                "document":"1"  
+            }
+
++ Response 204
+
+### Delete [DELETE]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 204
