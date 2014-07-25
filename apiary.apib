@@ -1504,3 +1504,171 @@ Issue related links
                 Authorization: Token {token}
 
 + Response 204
+
+# Group Admin - Voucher
+
+## Voucher [/admin/selling/voucher]
+### Create Voucher [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+    
+            {
+                "code":"test_code",
+                "validUntil":"2000-01-01 10:10:10",
+                "voucherSeries":"8"
+            
+            }
++ Response 201 (application/json)
+
+            {
+                "id": 1,
+                "uri": "admin/selling/voucher/1"
+            }
+
+## Voucher [/admin/selling/voucher/{id}]  
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
+
+### Read [GET]
+
++ Response 200 (application/json)
+    
+        {
+            "id":41,
+            "code":"test_code",
+            "validUntil":"2000-01-01 10:10:10",
+            "voucherSeries":[],
+            
+        }
+
+### Full Update [PUT]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "code":"test_code",
+                "validUntil":"2000-01-01 10:10:10",
+                "voucherSeries":"8"
+            
+            }
+
++ Response 204
+
+### Full Update [PATCH]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "code":"test_code",
+                "validUntil":"2000-01-01 10:10:10",
+                "voucherSeries":"8"
+            
+            }
+
++ Response 204
+
+### Delete [DELETE]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 204
+
+# Group Admin - Account
+
+## Account [/admin/selling/account]
+### Create Account [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+    
+            {
+                "seller":"14",
+                "code":"test_create",
+            
+            }
++ Response 201 (application/json)
+
+            {
+                "id": 1,
+                "seller": "admin/selling/seller/1"
+                "uri": "admin/selling/voucher/1"
+            }
+
+## Account [/admin/selling/account/{id}]  
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
+
+### Read [GET]
+
++ Response 200 (application/json)
+    
+        {
+            "id":25,
+            "code":"test_create",
+            "seller": [
+                "admin/selling/seller/1"
+            ]            
+        }
+
+### Full Update [PUT]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "seller":"14",
+                "code":"test_create",
+            
+            }
+
++ Response 204
+
+### Full Update [PATCH]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "seller":"14",
+                "code":"test_create",
+            
+            }
++ Response 204
+
+### Delete [DELETE]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
++ Response 204
