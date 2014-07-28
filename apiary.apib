@@ -1140,7 +1140,7 @@ Issue related links
 
 ## Group [/admin/content/group/{id}]  
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
+    + id (required, number, `1`) ... Numeric `id` of the Group to perform action with. Has example value.
 
 ### Read [GET]
 
@@ -1223,7 +1223,7 @@ Issue related links
 
 ## GroupItem [/admin/content/group_item/{id}]  
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
+    + id (required, number, `1`) ... Numeric `id` of the Group item to perform action with. Has example value.
 
 ### Read [GET]
 
@@ -1308,7 +1308,7 @@ Issue related links
 
 ## Category [/admin/content/category/{id}]  
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
+    + id (required, number, `1`) ... Numeric `id` of the Category to perform action with. Has example value.
 
 ### Read [GET]
 
@@ -1409,7 +1409,7 @@ Issue related links
 
 ## Category [/admin/content/attachment/{id}]  
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
+    + id (required, number, `1`) ... Numeric `id` of the Category to perform action with. Has example value.
 
 ### Read [GET]
 + Response 200 (application/json)
@@ -1532,7 +1532,7 @@ Issue related links
 
 ## Voucher [/admin/selling/voucher/{id}]  
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
+    + id (required, number, `1`) ... Numeric `id` of the Voucher to perform action with. Has example value.
 
 ### Read [GET]
 
@@ -1618,7 +1618,7 @@ Issue related links
 
 ## Account [/admin/selling/account/{id}]  
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
+    + id (required, number, `1`) ... Numeric `id` of the Account to perform action with. Has example value.
 
 ### Read [GET]
 
@@ -1672,3 +1672,87 @@ Issue related links
     
                 Authorization: Token {token}
 + Response 204
+
+# Group Admin - Vat
+## Vat [/admin/selling/vat]
+### Create Vat [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+    
+            {
+                "code": "normal",
+                "validSince": "2000-01-01 10:10:10",
+                "value": "20"
+            
+            }
++ Response 201 (application/json)
+
+            {
+                "id": 1,
+                "uri": "admin/selling/vat/1"
+            }
+
+## Vat [/admin/selling/vat/{id}]  
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Vat to perform action with. Has example value.
+
+### Read [GET]
+
++ Response 200 (application/json)
+    
+        {
+            "id":41,
+            "code":"test_code",
+            "validSince":"2000-01-01 10:10:10",
+            "value": "20"
+            
+        }
+
+### Full Update [PUT]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "code": "normal",
+                "validSince": "2000-01-01 10:10:10",
+                "value": "20"
+            
+            }
+
++ Response 204
+
+### Full Update [PATCH]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "code": "normal",
+                "validSince": "2000-01-01 10:10:10",
+                "value": "20"
+            
+            }
++ Response 204
+
+### Delete [DELETE]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
++ Response 204
+
