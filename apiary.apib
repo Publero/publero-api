@@ -1756,3 +1756,127 @@ Issue related links
                 Authorization: Token {token}
 + Response 204
 
+# Group Admin - Voucher series
+## Vat [/admin/selling/voucher_series]
+### Create Vat [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+    
+            {
+                "name": "test_name",
+                "codePattern": "AA",
+                "vouchersInSeries": "1",
+                "usagesPerVoucherLimit": "1",
+                "usagesPerUserLimit": "1",
+                "userPerSeriesLimit": 1
+            
+            }
++ Response 201 (application/json)
+
+            {
+                "id": 1,
+                "uri": "admin/selling/voucher_series/1"
+            }
+
+
+## Voucher series [/admin/selling/voucher_series/{id}]  
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Voucher series to perform action with. Has example value.
+
+### Read [GET]
+
++ Response 200 (application/json)
+    
+        {
+                "id": "1",
+                "name": "voucher series",
+                "codePattern": "Aa",
+                "vouchersInSeries": "1",
+                "usagesPerVoucherLimit": "1",
+                "usagesPerUserLimit": "1",
+                "vouchers": [
+                    "admin/selling/seller/1"
+                ]            
+                
+            
+        }
+
+### Full Update [PUT]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "name": "test_name",
+                "codePattern": "AA",
+                "vouchersInSeries": "1",
+                "usagesPerVoucherLimit": "1",
+                "usagesPerUserLimit": "1",
+                "userPerSeriesLimit": 1
+            }
+
++ Response 204
+
+### Full Update [PATCH]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "name": "test_name",
+                "codePattern": "AA",
+                "vouchersInSeries": "1",
+                "usagesPerVoucherLimit": "1",
+                "usagesPerUserLimit": "1",
+                "userPerSeriesLimit": 1
+            
+            }
++ Response 204
+
+### Delete [DELETE]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
++ Response 204
+
+## Voucher series [/admin/selling/voucher_series/{id}/generate_vouchers]
+### Generate vouchers [PUT]
+
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
++ Response 204
+
+## Voucher series [/admin/selling/voucher_series/{id}/export_vouchers]
+### Export vouchers [PUT]
+
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+                
+                DD
+                FF
+                
++ Response 200
