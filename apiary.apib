@@ -1880,3 +1880,25 @@ Issue related links
                 FF
                 
 + Response 200
+
+# Group Admin - Access Token
+
+## Voucher [/admin/user/acces_token]
+### Create Voucher [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+    
+            {
+                "user":"1",
+        
+            }
++ Response 201 (application/json)
+
+            {
+                "token": "asdfiopasdjfgiojsdoprj",
+            }
