@@ -1902,3 +1902,84 @@ Issue related links
             {
                 "token": "asdfiopasdjfgiojsdoprj",
             }
+
+# Group Admin - Margin
+## Margin [/admin/selling/margin]
+### Create Margin [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+    
+            {
+                "seller": "1",
+                "validSince": "2000-01-01 10:10:10",
+                "value": "20"
+            
+            }
++ Response 201 (application/json)
+
+            {
+                "id": 1,
+                "uri": "admin/selling/margin/1"
+            }
+
+## Vat [/admin/selling/margin/{id}]  
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Margin to perform action with. Has example value.
+
+### Read [GET]
+
++ Response 200 (application/json)
+    
+        {
+            "id":41,
+            "seller": "admin/selling/seller/1",
+            "validSince": "2000-01-01 10:10:10",
+            "value": "20"
+        }
+
+### Full Update [PUT]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "seller": "1",
+                "validSince": "2000-01-01 10:10:10",
+                "value": "20"
+            }
+
++ Response 204
+
+### Full Update [PATCH]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
+    + Body
+    
+            {
+                "seller": "1",
+                "validSince": "2000-01-01 10:10:10",
+                "value": "20"
+            }
++ Response 204
+
+### Delete [DELETE]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
++ Response 204
+
