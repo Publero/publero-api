@@ -1983,3 +1983,39 @@ Issue related links
                 Authorization: Token {token}
 + Response 204
 
+# Group Admin - UserToPublisher
+## Margin [/admin/content/user_to_publisher]
+### Create Margin [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+    
+            {
+                "user": "1",
+                "publisher": "1",
+            
+            }
++ Response 201 (application/json)
+
+            {
+                "user": admin/content/publisher/1",
+                "uri": "admin/user/1"
+            }
+
+
+## UserToPublisher [/admin/user/user_to_publisher/user/{user}/publisher/{publisher}]  
++ Parameters
+    + user (required, number, `1`) ... Numeric id`of the User to perform action with. Has example value.
+    + publisher (required, number, `1`) ... Numeric `id` of the Margin to perform action with. Has example value.
+
+### Delete [DELETE]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
++ Response 204
