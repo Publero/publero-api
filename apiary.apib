@@ -768,6 +768,27 @@ Document links
 
 # Group Admin - Issue
 Issue related links
+## Issue [/admin/content/issues/{titleId}/title]
++ Parameters
+    + titleId (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
+
+### Read [GET]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 200 (application/json)
+ 
+        [
+            {
+                id: 15,
+                slug: "read",
+                name: "test_issue_read",
+                uri: "content/issue/15"
+            }   
+        ]
 
 ## Issue [/admin/content/issue]
 ### Create Issue [POST]
