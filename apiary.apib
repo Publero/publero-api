@@ -442,6 +442,61 @@ Document links
 
                 {binary_data}
                 
+
+
+# Group User - User
+
+## Register user [/user]
+
+### Create user [POST]
+
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+        
+            {
+                "email": "test_email@example",
+                "plainPassword": "7777"
+            }
+
++ Response 200 (application/json)
+ 
+            {
+                id: 15,
+                uri: "user/15"
+            }
+
+## View user [/user/{id}]
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Category to perform action with. Has example value.
+
+### Read [GET]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 200 (application/json)
+
+    + Body
+    
+                {
+                    id: '15',
+                    username: 'user_0@example.com',
+                    usernameCanonical: 'user_0@example.com',
+                    email: 'user_0@example.com',
+                    emailCanonical: 'user_0@example.com',
+                    enabled: true,
+                    locked: false,
+                    expired: false,
+                    credentialsExpired: false
+                }
+
 # Group User - Library
 Document links
 
