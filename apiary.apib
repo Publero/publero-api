@@ -519,9 +519,28 @@ Document links
                 ]
 
 # Group Admin - Title
+## Title [/admin/content/titles/{categoryId}/category]
++ Parameters
+    + categoryId (required, number, `1`) ... Numeric `id` of the Category to perform action with. Has example value.
+
+### Read [GET]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 200 (application/json)
+ 
+        [
+            {
+                id: 15,
+                slug: "read",
+                uri: "content/title/15"
+            }   
+        ]
 
 ## Title [/admin/content/title]
-
 ### Create Title [POST]
 + Request (application/json)
 
