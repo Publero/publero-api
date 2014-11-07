@@ -574,9 +574,9 @@ Document links
                 ]
 
 # Group Admin - Title
-## Title [/admin/content/titles/{categoryId}/category]
+## Title [/admin/content/title/{titleId}/issues]
 + Parameters
-    + categoryId (required, number, `1`) ... Numeric `id` of the Category to perform action with. Has example value.
+    + titleId (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
 
 ### Read [GET]
 + Request
@@ -591,9 +591,14 @@ Document links
             {
                 id: 15,
                 slug: "read",
-                uri: "content/title/15"
+                name: "test_issue_read",
+                uri: "content/issue/15"
             }   
         ]
+
+
+
+
 
 ## Title [/admin/content/title]
 ### Create Title [POST]
@@ -768,27 +773,6 @@ Document links
 
 # Group Admin - Issue
 Issue related links
-## Issue [/admin/content/issues/{titleId}/title]
-+ Parameters
-    + titleId (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
-
-### Read [GET]
-+ Request
-
-    + Header
-    
-                Authorization: Token {token}
-
-+ Response 200 (application/json)
- 
-        [
-            {
-                id: 15,
-                slug: "read",
-                name: "test_issue_read",
-                uri: "content/issue/15"
-            }   
-        ]
 
 ## Issue [/admin/content/issue]
 ### Create Issue [POST]
@@ -1378,6 +1362,27 @@ Issue related links
 + Response 204
 
 # Group Admin - Category
+
+## Category [/admin/content/category/{categoryId}/titles]
++ Parameters
+    + categoryId (required, number, `1`) ... Numeric `id` of the Category to perform action with. Has example value.
+
+### Read [GET]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 200 (application/json)
+ 
+        [
+            {
+                id: 15,
+                slug: "read",
+                uri: "content/title/15"
+            }   
+        ]
 
 ## Category [/admin/content/category]
 ### Create GroupItem [POST]
