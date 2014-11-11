@@ -1363,6 +1363,27 @@ Issue related links
 
 # Group Admin - Category
 
+## Category Collection [/admin/content/category]
+
+### List [GET]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 200 (application/json)
+ 
+        [
+            {
+                id: 82,
+                code: "test_category_1",
+                name: "Test Category 5462039ac696e",
+                uri: "http://api.publero4.veleba/content/category/82"    
+            }   
+        ]
+
+
 ## Category [/admin/content/category/{categoryId}/titles]
 + Parameters
     + categoryId (required, number, `1`) ... Numeric `id` of the Category to perform action with. Has example value.
@@ -1391,8 +1412,8 @@ Issue related links
             }   
         ]
 
-## Category [/admin/content/category]
-### Create GroupItem [POST]
+## Category1 [/admin/content/category.]
+### Create category [POST]
 + Request (application/json)
 
     + Header
@@ -1412,6 +1433,7 @@ Issue related links
                 "id": 1,
                 "uri": "content/category/1"
             }
+
 
 ## Category [/admin/content/category/{id}]  
 + Parameters
