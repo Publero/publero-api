@@ -500,6 +500,87 @@ Document links
 # Group User - Library
 Document links
 
+## Library API get document by document_id [/admin/user/library/document/{document}]
++ Parameters
+    + document (required, number, `1`) ... Numeric `id` of the Document to perform action with. Has example value.
+
+
+### Library API get document by user_id [GET]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 200 (application/octet-stream)
+
+    + Body
+
+                {binary_data}
+
+## Library API get issues by user_id [/admin/user/{user}/library/issue]
++ Parameters
+    + user (required, number, `1`) ... Numeric `id` of the User to perform action with. Has example value.
+
+### Library API get issues by user_id [GET]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 200 (application/json)
+    + Body
+    
+                [
+                    {
+                        id: "15",
+                        name: "Test issue",
+                        slug: "test-issue-0",
+                        imageUrl: "content/issue/182/cover",
+                        titleSlug: "title-slug",
+                        uri: "content/issue/182"
+                    }
+                ]
+
+                  
+## Library API add content item [/user/library/add-content-item]
+
+### Library API add content item [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+        
+            {
+                "user": "1",
+                "contentItem": "1",
+                "origin": "test origin"
+            }
+
++ Response 204 (application/json)
+
+## Library API remove content item [/user/library/remove-content-item/{user}/{content_item}]
++ Parameters
+    + user (required, number, `1`) ... Numeric `id` of the User to perform action with. Has example value.
+    + content_item (required, number, `1`) ... Numeric `id` of the Content item to perform action with. Has example value.
+
+### Library API remove content item [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+
+
++ Response 204 (application/json)
+
+
 ## Document API [/user/library]
 
 ### Retrieve user library [GET]
