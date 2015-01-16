@@ -2229,3 +2229,129 @@ Issue related links
     
                 Authorization: Token {token}
 + Response 204
+
+
+# Group User - Personal
+
+## Personal [/user/personal]
+### Create Personal [POST]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+    
+            {
+                "firstname":"read",
+                "surname":"test_surname",
+                "day":"2",
+                "month":6,
+                "year":1939,
+                "gender":"male",
+                "country":"CZ",
+                "language":"cs",
+                "city":"test_city",
+                "zipCode":"894 45",
+                "street":"test_street",
+                "houseNumber":15
+            
+            }
++ Response 201 (application/json)
+
+            {
+                "id": 1,
+                "uri": "user/personal/1"
+            }
+
+## Personal [/user/personal/{id}]  
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Margin to perform action with. Has example value.
+
+##Read [GET]
+
++ Response 200 (application/json)
+
+            {
+                "firstname":"read",
+                "surname":"test_surname",
+                "day":"2",
+                "month":6,
+                "year":1939,
+                "gender":"male",
+                "country":"CZ",
+                "language":"cs",
+                "city":"test_city",
+                "zipCode":"894 45",
+                "street":"test_street",
+                "houseNumber":15
+            
+            }
+
+### Full Update [PUT]
+
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+    
+            {
+                "firstname":"read",
+                "surname":"test_surname",
+                "day":"2",
+                "month":6,
+                "year":1939,
+                "gender":"male",
+                "country":"CZ",
+                "language":"cs",
+                "city":"test_city",
+                "zipCode":"894 45",
+                "street":"test_street",
+                "houseNumber":15
+            
+            }
+
++ Response 201 (application/json)
+
+### Full Update [PATCH]
+
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+        
+    + Body
+    
+            {
+                "firstname":"read",
+                "surname":"test_surname",
+                "day":"2",
+                "month":6,
+                "year":1939,
+                "gender":"male",
+                "country":"CZ",
+                "language":"cs",
+                "city":"test_city",
+                "zipCode":"894 45",
+                "street":"test_street",
+                "houseNumber":15
+            
+            }
+
++ Response 201 (application/json)
+
+### Delete [DELETE]
++ Request
+
+    + Header
+    
+                Authorization: Token {token}
++ Response 204
+
+
+
