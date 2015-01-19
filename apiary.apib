@@ -497,6 +497,31 @@ Document links
                     credentialsExpired: false
                 }
 
+## Watched title [/user/add-watched-title/{title}/{user}]
+
++ Parameters
+    + title (required, number, `1`) ... Numeric `id` of the Title to perform action with. Has example value.
+    + user (required, number, `1`) ... Numeric `id` of the User to perform action with. Has example value.
+
+### Full Update [PUT]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 204 (application/json)
+
+### DELETE [DELETE]
++ Request (application/json)
+
+    + Header
+    
+                Authorization: Token {token}
+
++ Response 204 (application/json)
+ 
+
 # Group User - Library
 Document links
 
